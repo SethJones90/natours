@@ -23,6 +23,7 @@ body {
 }
 
 .header {
+  position: relative;
   height: 95vh; /* 95% of the viewport height */
   background-image: linear-gradient(
     to right bottom, 
@@ -32,4 +33,93 @@ body {
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+/* 40px from the top and to the left of parent element that has its position set to relative (.header)*/
+.logo-box {
+  position: absolute; 
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* shift box 50% of its height and width upwards and to the left */
+}
+
+.heading-primary  {
+  color: #fff;
+  text-transform: uppercase;
+
+  /* removes shake in animation */
+  backface-visibility: hidden;
+}
+
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400px;
+  letter-spacing: 35px;
+
+  /* animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out; */
+  animation: moveInLeft 1s ease-out;
+
+  /* 
+  animation-iteration-count: 3;
+  animation-delay: 3s; 
+  */
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700px;
+  letter-spacing: 17.4px;
+
+  /* animation-name: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out; */
+  animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
