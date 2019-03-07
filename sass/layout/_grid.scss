@@ -1,7 +1,6 @@
 .row {
   //max-width = if less than specified width, occupy 100% of the screen
   max-width: $grid-width; // 1140px
-  background-color: #eee;
   margin: $gutter-vertical; // centers block elements inside of other block elements
 
   &:not(:last-child) {
@@ -11,7 +10,6 @@
   @include clearfix;
 
   [class^="col-"] {
-    background-color: orangered;
     float: left;
 
     &:not(:last-child) {
